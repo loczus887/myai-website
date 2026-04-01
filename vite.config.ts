@@ -1,7 +1,40 @@
-import { defineConfig } from 'vite'
+import { defineConfig, Plugin } from 'vite'
+import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// Resolves Figma asset imports (figma:asset/...) to /logo.png for local dev
+function figmaAssetPlugin(): Plugin {
+  return {
+    name: 'figma-asset',
+    resolveId(id) {
+      if (id.startsWith('figma:asset/')) {
+        return '\0figma-asset:' + id
+      }
+    },
+    load(id) {
+      if (id.startsWith('\0figma-asset:figma:asset/')) {
+        return `export default '/logo.png'`
+      }
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    // The React and Tailwind plugins are both required for Make, even if
+    // Tailwind is not being actively used – do not remove them
+    react(),
+    tailwindcss(),
+    figmaAssetPlugin(),
+  ],
+  resolve: {
+    alias: {
+      // Alias @ to the src directory
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+
+  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
+  assetsInclude: ['**/*.svg', '**/*.csv'],
 })
