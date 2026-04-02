@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { User, GraduationCap, Users } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -13,6 +14,8 @@ interface TeamMember {
 }
 
 function TeamCard({ member }: { member: TeamMember }) {
+  const [imgError, setImgError] = useState(false);
+
   const getIcon = () => {
     if (member.type === 'supervisor') return <GraduationCap className="w-6 h-6" />;
     if (member.type === 'leader') return <Users className="w-6 h-6" />;
@@ -35,8 +38,8 @@ function TeamCard({ member }: { member: TeamMember }) {
     >
       <div className="flex items-start gap-4">
         <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-blue-500/20 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
-          {member.photo && member.photo.length > 0
-            ? <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+          {member.photo && member.photo.length > 0 && !imgError
+            ? <img src={member.photo} alt={member.name} className="w-full h-full object-cover" onError={() => setImgError(true)} />
             : getIcon()
           }
         </div>
