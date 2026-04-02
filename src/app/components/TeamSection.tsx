@@ -2,12 +2,13 @@ import { motion } from 'motion/react';
 import { User, GraduationCap, Users } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
-type MemberType = 'supervisor' | 'leader' | 'member';
+type MemberType = 'supervisor' | 'leader' | 'member' | 'friend';
 
 interface TeamMember {
   name: string;
-  role: string;
+  role?: string;
   description: string;
+  photo?: string;
   type: MemberType;
 }
 
@@ -33,8 +34,11 @@ function TeamCard({ member }: { member: TeamMember }) {
       className={`bg-white/5 backdrop-blur-lg border ${getBorderColor()} rounded-xl p-6 hover:bg-white/10 transition-all group`}
     >
       <div className="flex items-start gap-4">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-blue-500/20 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-          {getIcon()}
+        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-blue-500/20 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+          {member.photo && member.photo.length > 0
+            ? <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+            : getIcon()
+          }
         </div>
 
         <div className="flex-1">
@@ -50,7 +54,7 @@ function TeamCard({ member }: { member: TeamMember }) {
 export function TeamSection() {
   const { t } = useLanguage();
 
-  const memberTypes: MemberType[] = ['supervisor', 'supervisor', 'leader', 'leader', 'member', 'member', 'member', 'member'];
+  const memberTypes: MemberType[] = ['supervisor', 'supervisor', 'supervisor', 'supervisor', 'leader', 'leader', 'member', 'member', 'member', 'member', 'member', 'member', 'friend', 'friend'];
   const teamMembers: TeamMember[] = t.team.members.map((m, i) => ({
     ...m,
     type: memberTypes[i],
@@ -59,6 +63,7 @@ export function TeamSection() {
   const supervisors = teamMembers.filter(m => m.type === 'supervisor');
   const leaders = teamMembers.filter(m => m.type === 'leader');
   const members = teamMembers.filter(m => m.type === 'member');
+  const friends = teamMembers.filter(m => m.type === 'friend');
 
   return (
     <section id="team" className="py-24 bg-gradient-to-b from-black to-black relative overflow-hidden">
@@ -128,17 +133,37 @@ export function TeamSection() {
         </div>
 
         {/* Members */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <User className="w-6 h-6 text-blue-500" />
-            {t.team.coreTeamMembers}
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mb-12">
+          <div className="flex items-center gap-4 mb-6">
+            <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+              <User className="w-6 h-6 text-blue-500" />
+              {t.team.coreTeamMembers}
+            </h3>
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 border border-blue-500/40 text-blue-300">
+              {t.team.coreTeamSubtitle}
+            </span>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {members.map((member) => (
               <TeamCard key={member.name} member={member} />
             ))}
           </div>
         </div>
+
+        {/* Friends */}
+        {friends.length > 0 && (
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <User className="w-6 h-6 text-cyan-500" />
+              {t.team.clubFriends}
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {friends.map((member) => (
+                <TeamCard key={member.name} member={member} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

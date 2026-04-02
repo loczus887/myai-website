@@ -1,5 +1,5 @@
-import { Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
-import logo from 'figma:asset/81f1d01eff03020ed49590e371fd1a448191c702.png';
+import { Mail, MapPin, Github, Linkedin, Facebook } from 'lucide-react';
+import logo from '../../public/logo.png';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export function Footer() {
@@ -24,9 +24,9 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4">{t.footer.contact}</h4>
             <div className="space-y-3">
-              <a href="mailto:contact@myai.pk.edu.pl" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm">
+              <a href="mailto:myai.sknum@gmail.com" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm">
                 <Mail className="w-4 h-4" />
-                contact@myai.pk.edu.pl
+                myai.sknum@gmail.com
               </a>
               <div className="flex items-start gap-2 text-white/60 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -43,25 +43,31 @@ export function Footer() {
             <h4 className="text-white font-bold mb-4">{t.footer.followUs}</h4>
             <div className="flex gap-3">
               <a
-                href="#"
-                className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
+                href="https://www.linkedin.com/company/studenckie-ko%C5%82o-naukowe-uczenia-maszynowego-myai"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61575823721644"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
-                aria-label="Twitter"
+                aria-label="Facebook"
               >
-                <Twitter className="w-5 h-5" />
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://github.com/SKNUM-MyAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
               </a>
             </div>
           </div>

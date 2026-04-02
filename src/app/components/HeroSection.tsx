@@ -6,7 +6,7 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
+    <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-pink-500/20 rounded-full blur-[120px] animate-pulse" />
@@ -88,9 +88,11 @@ export function HeroSection() {
               <span className="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full" />
               {t.hero.aboutTitle}
             </h3>
-            <p className="text-white/80 leading-relaxed">
-              {t.hero.aboutText}
-            </p>
+            <div className="text-white/80 leading-relaxed space-y-4">
+              {t.hero.aboutText.split('\n\n').map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

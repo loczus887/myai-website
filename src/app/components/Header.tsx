@@ -1,5 +1,5 @@
 import { Menu } from 'lucide-react';
-import logo from 'figma:asset/81f1d01eff03020ed49590e371fd1a448191c702.png';
+import logo from '../../public/logo.png';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export function Header() {
@@ -18,6 +18,8 @@ export function Header() {
             <a href="#about" className="text-white/80 hover:text-white transition-colors">{t.nav.about}</a>
             <a href="#team" className="text-white/80 hover:text-white transition-colors">{t.nav.team}</a>
             <a href="#activities" className="text-white/80 hover:text-white transition-colors">{t.nav.activities}</a>
+            <a href="#portfolio" className="text-white/80 hover:text-white transition-colors">{t.nav.portfolio}</a>
+            <a href="#news" className="text-white/80 hover:text-white transition-colors">{t.nav.news}</a>
             <a href="#contact" className="text-white/80 hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
 
