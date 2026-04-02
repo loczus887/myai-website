@@ -65,15 +65,24 @@ export function HeroSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              MyAI
-            </h1>
+            <div className="mb-8 relative inline-block">
+              {/* Glow behind text */}
+              <div className="absolute inset-0 blur-[60px] bg-gradient-to-r from-pink-500/40 via-purple-500/40 to-blue-500/40 rounded-full scale-150" />
+              <h1
+                className="relative text-7xl md:text-9xl font-black tracking-widest bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent drop-shadow-lg"
+                style={{ fontFamily: "'Orbitron', sans-serif" }}
+              >
+                MyAI
+              </h1>
+              {/* Underline accent */}
+              <div className="mt-2 h-1 w-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500" />
+            </div>
 
-            <h2 className="text-2xl md:text-3xl text-white/90 mb-4">
+            <h2 className="text-xl md:text-2xl text-white/80 mb-4 tracking-wide uppercase" style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.95rem', letterSpacing: '0.2em' }}>
               {t.hero.subtitle}
             </h2>
 
-            <p className="text-lg md:text-xl text-white/70 mb-12 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/60 mb-12 max-w-3xl mx-auto">
               {t.hero.description}
             </p>
           </motion.div>

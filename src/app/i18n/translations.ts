@@ -138,10 +138,90 @@ export const translations = {
         projects: 'Projects',
         publications: 'Publications',
         events: 'Events',
+        awards: 'Awards',
+        conferences: 'Conferences',
       },
-      projects: [],
+      projects: [
+        {
+          title: "AIRIS – Advanced Intelligent Recognition & Interception System",
+          image: "/projects/airis.jpg",
+          description: "AIRIS is a real-time security monitoring system integrating computer vision and artificial intelligence in a wearable environment. It uses a three-layer architecture and multi-stage image analysis: face detection (Haar + dlib), temporal tracking and threat detection (modified YOLO).",
+          tags: ["Computer Vision", "YOLO", "dlib", "ESP32-CAM", "Wearable AI"],
+        },
+      ],
       publications: [],
-      events: [],
+      events: [
+        {
+          title: "🌍 STARS EU BIP – France 2026",
+          date: "January 12–16, 2026",
+          location: "IUT Nord Franche-Comté, France",
+          images: [
+            "/events/stars-eu-1.jpg",
+            "/events/stars-eu-2.jpg",
+          ],
+          description: "Our club members Alicja Kowalska, Klaudia Karczmarczyk and Wiktoria Kosek took part in the international STARS EU – Blended Intensive Programme (BIP)!\n\nThroughout the semester the girls attended online classes as part of the programme, and the intensive week at IUT Nord Franche-Comté (12–16 January 2026) was the grand finale – a hands-on summary combining workshops, teamwork and intercultural exchange with students from across Europe.\n\nCongratulations and fingers crossed for more international trips! 💙",
+        },
+        {
+          title: "AI Agents Workshop",
+          date: "January 13, 2026",
+          location: "Cracow University of Technology",
+          images: [
+            "/events/ai-agents-1.jpg",
+          ],
+          description: "On January 13th, our club member Antoni Jaros took part in the AI Agents workshop, organized by u2i in cooperation with the Faculty of Computer Science and Mathematics at Cracow University of Technology.\n\nIt was very hands-on 💻\n\nDesigning AI agents, working with local language models, prompt engineering and integrating models with tools – all in a hands-on format.\n\nThe workshop was led by Iwo Szczepaniak, who talked about real commercial applications of multi-agent AI systems.\n\nWe're glad that MyAI members are developing, gaining experience and representing our club at industry events 🚀\n\nThanks for the invitation and the great workshop!\n\n📸 Photo: Faculty of Computer Science and Mathematics, Cracow University of Technology",
+        },
+        {
+          title: "Women in Tech Camp",
+          date: "December 2025",
+          location: "Women in Tech Camp",
+          images: [
+            "/events/witc-1.jpg",
+            "/events/witc-2.jpg",
+            "/events/witc-3.jpg",
+            "/events/witc-4.jpg",
+          ],
+          description: "In December, Wiktoria and Alicja represented our club at Women in Tech Camp 💜\n\nA few days full of workshops, inspiring meetings and conversations with girls and women who – just like us – are developing themselves in IT.\n\nDuring the camp we took part in workshops on AI, LLMs, Data Science, Machine Learning and cloud, as well as mentoring sessions and meetings with role models from the tech industry.\n\nThere was a lot of learning, motivation, sharing experiences and building relationships that – we hope – will stay with us for a long time 💫\n\nWomen in Tech Camp is not just an event, but a community and a huge dose of inspiration 🚀 We're glad we could be there and can't wait to share the knowledge we gained with our club!",
+        },
+        {
+          title: "University Festival – Małopolska of the Future at EXPO Kraków",
+          date: "November 26, 2025",
+          location: "EXPO Kraków",
+          images: [
+            "/events/festiwal-1.jpg",
+            "/events/festiwal-2.jpg",
+            "/events/festiwal-3.jpg",
+            "/events/festiwal-4.jpg",
+            "/events/festiwal-5.jpg",
+            "/events/festiwal-6.jpg",
+            "/events/festiwal-7.jpg",
+          ],
+          description: "On November 26th, our MyAI Research Club appeared at the University Festival – Małopolska of the Future at EXPO Kraków, and a lot happened!\n\nEveryone who visited our stand could try out our interactive AI projects themselves:\n🤖 AIRIS – personal safety system\n🧠 Drawing digits and how neural networks work\n✏️ Quick Draw AI – AI guessing what you're drawing\n😃 Emotion AI – real-time emotion detection\n📝 Human or AI? – a quiz to guess the author of a text\n⭕️❌ Tic-tac-toe with an AI algorithm explanation\n🌟 Text generator\n🎁 AI/ML quizzes with prizes\n\nThank you to everyone who came by, asked questions, tested the models and had fun with us. It was a great experience – see you at the next events! 🚀",
+        },
+        {
+          title: "Engineering Job Fair at Cracow University of Technology",
+          date: "October 23, 2025",
+          location: "Cracow University of Technology",
+          images: [
+            "/events/targi-pracy-1.jpg",
+            "/events/targi-pracy-2.jpg",
+          ],
+          description: "On Thursday, October 23rd, our MyAI Student Machine Learning Research Club took part in the Engineering Job Fair at Cracow University of Technology! 🚀\n\nDuring the event we had the opportunity to present the projects we are currently working on in our club 🤖💡. We happily talked with students and everyone interested in artificial intelligence and machine learning, sharing our experiences and answering many interesting questions.\n\nThank you to everyone who visited us – your interest and positive energy motivate us to keep going! 💪",
+        },
+      ],
+      awards: [
+        {
+          title: "Audience Award (ex aequo) – AIRIS project",
+          competition: "Annual Faculty Student Research Club Session",
+          date: "May 8, 2025",
+          images: [
+            "/awards/airis-1.jpg",
+            "/awards/airis-2.jpg",
+            "/awards/airis-3.jpg",
+          ],
+          description: "After only two months of activity, our club presented one of its first projects – AIRIS – at the annual Faculty Session. The club was represented by Alicja Kowalska and Wiktoria Kosek (2nd year Computer Science students), supervised by Dr Ilona Urbaniak.\n\nAIRIS (Advanced Intelligent Recognition and Intervention System) is a real-time threat detection system based on ESP32-CAM, featuring two-stage face detection and a modified YOLO model for recognizing dangerous objects. It analyzes user behavior, instantly reacts to incidents and can be scaled to various environments – from critical infrastructure to public spaces.\n\n🏆 The girls won the Audience Award (ex aequo) – huge congratulations! Work on improving the system continues.",
+        },
+      ],
+      conferences: [],
       empty: 'Nothing here yet - check back soon!',
     },
     news: {
@@ -149,6 +229,12 @@ export const translations = {
       subtitle: 'Stay up to date with what\'s happening at MyAI',
       readMore: 'Read more',
       items: [
+        {
+          title: '🚀 The Scientific & Educational Section at MyAI is up and running!',
+          date: '2025-12-01',
+          image: '/news/sekcja-naukowo-poznawcza.jpg',
+          summary: 'Since December, the Scientific & Educational Section has been actively operating in our MyAI Research Club.\n\nIt\'s the perfect place for everyone who wants to start their adventure with AI and machine learning, build solid foundations and in the future join our engineering & research teams 🧠💻\n\nDuring meetings, participants learn about:\n👉 basic ML algorithms (perceptron, logistic regression, SVM, k-NN, Bayes, decision trees)\n👉 regression models and ensemble learning methods\n👉 model quality evaluation, data analysis and dimensionality reduction\n👉 neural networks and their learning mechanisms\n👉 elements of NLP and topics developed according to the group\'s interests 🙂\n\nWe are happy to jointly develop the AI community at Cracow University of Technology and gain new knowledge 🚀\n\nSee you at the meetings! ✨🧠',
+        },
         {
           title: '🚀 Recruitment for the MyAI Student Machine Learning Research Club has started!',
           date: '2026-04-02',
@@ -305,10 +391,90 @@ export const translations = {
         projects: 'Projekty',
         publications: 'Publikacje',
         events: 'Wydarzenia',
+        awards: 'Osiągnięcia',
+        conferences: 'Konferencje',
       },
-      projects: [],
+      projects: [
+        {
+          title: "AIRIS – Advanced Intelligent Recognition & Interception System",
+          image: "/projects/airis.jpg",
+          description: "AIRIS to system monitorowania bezpieczeństwa w czasie rzeczywistym, integrujący widzenie komputerowe i sztuczną inteligencję w środowisku wearable. Wykorzystuje trójwarstwową architekturę oraz wieloetapową analizę obrazu: detekcję twarzy (Haar + dlib), śledzenie temporalne i detekcję zagrożeń (zmodyfikowany YOLO).",
+          tags: ["Computer Vision", "YOLO", "dlib", "ESP32-CAM", "Wearable AI"],
+        },
+      ],
       publications: [],
-      events: [],
+      events: [
+        {
+          title: "🌍 STARS EU BIP – Francja 2026",
+          date: "12–16 stycznia 2026",
+          location: "IUT Nord Franche-Comté, Francja",
+          images: [
+            "/events/stars-eu-1.jpg",
+            "/events/stars-eu-2.jpg",
+          ],
+          description: "Członkinie naszego koła naukowego Alicja Kowalska, Klaudia Karczmarczyk i Wiktoria Kosek wzięły udział w międzynarodowym programie STARS EU \u2013 Blended Intensive Programme (BIP)!\n\nPrzez cały semestr dziewczyny uczestniczyły w zajęciach online w ramach programu, a intensywny tydzień na IUT Nord Franche-Comt\u00e9 (12\u201316 stycznia 2026) był jego zwieńczeniem \u2013 praktycznym podsumowaniem łączącym warsztaty, pracę zespołową i wymianę międzykulturową ze studentami z całej Europy.\n\nGratulujemy i trzymamy kciuki za kolejne międzynarodowe wyjazdy! \ud83d\udc99",
+        },
+        {
+          title: "Warsztaty AI Agents",
+          date: "13 stycznia 2026",
+          location: "Politechnika Krakowska",
+          images: [
+            "/events/ai-agents-1.jpg",
+          ],
+          description: "13 stycznia członek naszego koła, Antoni Jaros, wziął udział w warsztatach AI Agents, zorganizowanych przez u2i we współpracy z Wydziałem Informatyki i Matematyki Politechniki Krakowskiej.\n\nByło bardzo praktycznie 💻\n\nProjektowanie agentów AI, praca z lokalnymi modelami językowymi, prompt engineering i integracja modeli z narzędziami – wszystko w formie hands-on.\n\nWarsztaty poprowadził Iwo Szczepaniak, który opowiadał o realnych, komercyjnych zastosowaniach wieloagentowych systemów AI.\n\nCieszymy się, że członkowie MyAI rozwijają się, łapią doświadczenie i reprezentują nasze koło na wydarzeniach branżowych 🚀\n\nDzięki za zaproszenie i świetne warsztaty!\n\n📸 Zdjęcie: Wydział Informatyki i Matematyki Politechniki Krakowskiej",
+        },
+        {
+          title: "Women in Tech Camp",
+          date: "Grudzień 2025",
+          location: "Women in Tech Camp",
+          images: [
+            "/events/witc-1.jpg",
+            "/events/witc-2.jpg",
+            "/events/witc-3.jpg",
+            "/events/witc-4.jpg",
+          ],
+          description: "W grudniu Wiktoria i Alicja reprezentowały nasze koło podczas Women in Tech Camp 💜\n\nKilka dni pełnych warsztatów, inspirujących spotkań i rozmów z dziewczynami oraz kobietami, które – tak jak my – rozwijają się w IT.\n\nPodczas campu brałyśmy udział w warsztatach m.in. z AI, LLM, Data Science, Machine Learning oraz cloud, a także w sesjach mentoringowych i spotkaniach z role models z branży technologicznej.\n\nByło dużo nauki, motywacji, wymiany doświadczeń i budowania relacji, które – mamy nadzieję – zostaną z nami na długo 💫\n\nWomen in Tech Camp to nie tylko wydarzenie, ale społeczność i ogromna dawka inspiracji 🚀 Cieszymy się, że mogłyśmy tam być i już nie możemy się doczekać, by podzielić się zdobytą wiedzą w naszym kole!",
+        },
+        {
+          title: "Festiwal Uczelni – Małopolska Przyszłości w EXPO Kraków",
+          date: "26 listopada 2025",
+          location: "EXPO Kraków",
+          images: [
+            "/events/festiwal-1.jpg",
+            "/events/festiwal-2.jpg",
+            "/events/festiwal-3.jpg",
+            "/events/festiwal-4.jpg",
+            "/events/festiwal-5.jpg",
+            "/events/festiwal-6.jpg",
+            "/events/festiwal-7.jpg",
+          ],
+          description: "26 listopada nasze Koło Naukowe MyAI pojawiło się na Festiwalu Uczelni – Małopolska Przyszłości w EXPO Kraków i działo się naprawdę sporo!\n\nKażdy, kto odwiedził nasze stoisko, mógł samodzielnie wypróbować nasze interaktywne projekty AI:\n🤖 AIRIS – system bezpieczeństwa osobistego\n🧠 Rysowanie cyfr i działanie sieci neuronowych\n✏️ Quick Draw AI – AI zgadujące, co rysujesz\n😃 Emotion AI – wykrywanie emocji w czasie rzeczywistym\n📝 Human or AI? – quiz, w którym trzeba odgadnąć autora tekstu\n⭕️❌ Kółko i krzyżyk z wyjaśnieniem algorytmu AI\n🌟 Generator tekstów\n🎁 Quizy o AI/ML z nagrodami\n\nDziękujemy wszystkim, którzy do nas podeszli, zadawali pytania, testowali modele i bawili się razem z nami. To było świetne doświadczenie – widzimy się na kolejnych eventach! 🚀",
+        },
+        {
+          title: "Inżynierskie Targi Pracy na Politechnice Krakowskiej",
+          date: "23 października 2025",
+          location: "Politechnika Krakowska",
+          images: [
+            "/events/targi-pracy-1.jpg",
+            "/events/targi-pracy-2.jpg",
+          ],
+          description: "W czwartek 23 października nasze Studenckie Koło Naukowe Uczenia Maszynowego MyAI wzięło udział w Inżynierskich Targach Pracy na Politechnice Krakowskiej! 🚀\n\nPodczas wydarzenia mieliśmy okazję zaprezentować projekty, nad którymi aktualnie pracujemy w naszym kole 🤖💡. Z radością rozmawialiśmy ze studentami, a także wszystkimi osobami zainteresowanymi sztuczną inteligencją i uczeniem maszynowym. Chętnie dzieliliśmy się naszymi doświadczeniami i odpowiadaliśmy na wiele ciekawych pytań.\n\nDziękujemy wszystkim, którzy nas odwiedzili – Wasze zainteresowanie i pozytywna energia dodają nam motywacji do dalszego działania! 💪",
+        },
+      ],
+      awards: [
+        {
+          title: "Nagroda Publiczności (ex aequo) – projekt AIRIS",
+          competition: "Wydziałowa Sesja Kół Naukowych",
+          date: "8 maja 2025",
+          images: [
+            "/awards/airis-1.jpg",
+            "/awards/airis-2.jpg",
+            "/awards/airis-3.jpg",
+          ],
+          description: "Już po dwóch miesiącach działalności zaprezentowaliśmy jeden z naszych pierwszych projektów – AIRIS – na corocznej Wydziałowej Sesji Kół Naukowych. Koło reprezentowały Alicja Kowalska i Wiktoria Kosek, studentki II roku Informatyki, pod opieką dr Ilony Urbaniak.\n\nAIRIS to inteligentny system wykrywający zagrożenia w czasie rzeczywistym – oparty na ESP32-CAM, z dwustopniową detekcją twarzy i zmodyfikowanym modelem YOLO do rozpoznawania niebezpiecznych obiektów. Analizuje zachowanie użytkownika, błyskawicznie reaguje na incydenty i może być skalowany do różnych środowisk – od infrastruktury krytycznej po przestrzeń publiczną.\n\n🏆 Dziewczyny zdobyły Nagrodę Publiczności (ex aequo) – ogromne gratulacje! Prace nad ulepszeniem systemu trwają.",
+        },
+      ],
+      conferences: [],
       empty: 'Tu jeszcze nic nie ma - wróć wkrótce!',
     },
     news: {
@@ -316,6 +482,12 @@ export const translations = {
       subtitle: 'Bądź na bieżąco z tym, co dzieje się w MyAI',
       readMore: 'Czytaj więcej',
       items: [
+        {
+          title: '🚀 Sekcja Naukowo-Poznawcza w SKN Uczenia Maszynowego MyAI już działa!',
+          date: '2025-12-01',
+          image: '/news/sekcja-naukowo-poznawcza.jpg',
+          summary: 'Od grudnia w naszym Kole Naukowym MyAI aktywnie działa Sekcja Naukowo-Poznawcza.\n\nTo idealne miejsce dla wszystkich, którzy chcą zacząć przygodę z AI i uczeniem maszynowym, zdobyć solidne podstawy i w przyszłości dołączyć do naszych zespołów badawczo-inżynieryjnych 🧠💻\n\nPodczas spotkań uczestnicy poznają m.in.:\n👉 podstawowe algorytmy ML (perceptron, regresja logistyczna, SVM, k-NN, Bayes, drzewa decyzyjne)\n👉 modele regresji i metody ensemble learning\n👉 ocenę jakości modeli, analizę danych i redukcję wymiarowości\n👉 sieci neuronowe i mechanizmy ich uczenia\n👉 elementy NLP i tematy rozwijane zgodnie z zainteresowaniami grupy 🙂\n\nCieszymy się, że możemy wspólnie rozwijać społeczność AI na Politechnice Krakowskiej i zdobywać nową wiedzę 🚀\n\nDo zobaczenia na spotkaniach! ✨🧠',
+        },
         {
           title: '🚀 Startuje rekrutacja do Studenckiego Koła Naukowego Uczenia Maszynowego MyAI!',
           date: '2026-04-02',

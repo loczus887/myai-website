@@ -99,9 +99,11 @@ export function NewsSection() {
             <EmptyState message={t.news.empty} />
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {(t.news.items as any[]).map((item, i) => (
-                <NewsCard key={i} item={item} index={i} />
-              ))}
+              {[...(t.news.items as any[])]
+                .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                .map((item, i) => (
+                  <NewsCard key={i} item={item} index={i} />
+                ))}
             </div>
           )}
         </div>

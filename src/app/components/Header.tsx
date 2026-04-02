@@ -9,7 +9,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1">
             <img src={logo} alt="MyAI Logo" className="w-12 h-12" />
             <span className="text-xl font-bold text-white">MyAI</span>
           </div>
