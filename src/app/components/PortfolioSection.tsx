@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Folder, BookOpen, Calendar, ExternalLink, Tag, Trophy, Mic, ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
+import { Folder, BookOpen, Calendar, ExternalLink, Tag, Trophy, Mic, ChevronLeft, ChevronRight, X, ZoomIn, User } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 type Tab = 'projects' | 'publications' | 'events' | 'awards' | 'conferences';
@@ -150,7 +150,7 @@ function EmptyState({ message }: { message: string }) {
 }
 
 // ── Cards ────────────────────────────────────────────────────────────────────
-function ProjectCard({ item }: { item: { title: string; description: string; image?: string; tags?: string[]; link?: string } }) {
+function ProjectCard({ item }: { item: { title: string; description: string; image?: string; tags?: string[]; authors?: string[]; link?: string } }) {
   const [lightbox, setLightbox] = useState<number | null>(null);
   return (
     <>
@@ -172,6 +172,15 @@ function ProjectCard({ item }: { item: { title: string; description: string; ima
             {item.link && <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex-shrink-0"><ExternalLink className="w-5 h-5" /></a>}
           </div>
           <p className="text-white/60 text-sm leading-relaxed flex-1">{item.description}</p>
+          {item.authors && item.authors.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {item.authors.map(author => (
+                <span key={author} className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-white/10 border border-white/20 text-white/70">
+                  <User className="w-3 h-3" />{author}
+                </span>
+              ))}
+            </div>
+          )}
           {item.tags && item.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {item.tags.map(tag => (
