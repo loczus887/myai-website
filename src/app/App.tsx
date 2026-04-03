@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -6,8 +7,9 @@ import { ActivitiesSection } from './components/ActivitiesSection';
 import { PortfolioSection } from './components/PortfolioSection';
 import { NewsSection } from './components/NewsSection';
 import { Footer } from './components/Footer';
+import { LandingPage } from './pages/LandingPage';
 
-export default function App() {
+function SKNSite() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-black">
@@ -20,5 +22,16 @@ export default function App() {
         <Footer />
       </div>
     </LanguageProvider>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/skn/*" element={<SKNSite />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

@@ -1,5 +1,6 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronLeft } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router';
 import logo from '../../public/logo.png';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -13,9 +14,19 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
-          <div className="flex items-center gap-1">
-            <img src={logo} alt="MyAI Logo" className="w-12 h-12" />
-            <span className="text-xl font-bold text-white">MyAI</span>
+          <div className="flex items-center gap-3">
+            <Link
+              to="/"
+              onClick={() => window.scrollTo(0, 0)}
+              className="flex items-center gap-1 text-white/40 hover:text-white/80 transition-colors text-sm"
+              title="Strona główna / Home"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </Link>
+            <div className="flex items-center gap-1">
+              <img src={logo} alt="MyAI Logo" className="w-12 h-12" />
+              <span className="text-xl font-bold text-white">MyAI</span>
+            </div>
           </div>
 
           {/* Desktop nav */}

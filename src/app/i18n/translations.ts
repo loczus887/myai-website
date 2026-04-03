@@ -29,7 +29,7 @@ export const translations = {
       members: [
         {
           name: 'Dr Ilona Urbaniak',
-          role: 'Main Faculty Advisor',
+          role: 'Founder and Director, MyAI Research Initiative; Faculty Lead, MyAI Student Research Club',
           photo: '/team/ilona-urbaniak.jpg',
           description: 'PhD in applied mathematics (University of Waterloo, Canada). Assistant professor at the Department of Computer Science and Mathematics at Cracow University of Technology, specializing in artificial intelligence methods and image processing. Combines academic experience with engineering practice. Former Head of AI Department at NASK, leading advanced machine learning projects, and Senior AI Engineer at IllumiSonics (Waterloo, Canada), developing medical image analysis algorithms. Her research covers intelligent image data processing, deep learning, and methods supporting medical diagnostics.',
         },
@@ -53,13 +53,13 @@ export const translations = {
         },
         {
           name: 'Alicja Kowalska',
-          role: 'Club President',
+          role: 'Student Lead. President of the student research club MyAI Sknum',
           photo: '/team/alicja-kowalska.jpg',
           description: 'Third-year Computer Science student who combines studies with practice - working as a Software Developer specializing in ML&AI. In the club, she realizes various projects and as an administrator coordinates joint activities. Beyond coding? Personal projects (ideas are never in short supply, just time!), rollerblading, dancing, experimenting in the kitchen and baking.',
         },
         {
           name: 'Wiktoria Kosek',
-          role: 'Vice President',
+          role: 'Vice Student Lead. Vice President of the student research club MyAI Sknum',
           photo: '/team/wiktoria-kosek.jpg',
           description: 'Third-year Computer Science student, passionate about AI, especially computer vision. Currently developing several personal projects, and in her spare time works as a model and travels, discovering new places.',
         },
@@ -303,7 +303,7 @@ export const translations = {
       members: [
         {
           name: 'Dr Ilona Urbaniak',
-          role: 'Główny Opiekun Naukowy Koła',
+          role: 'Założycielka i Dyrektorka MyAI Research Initiative; Opiekun Studenckiego Koła Naukowego Uczenia Maszynowego MyAI',
           photo: '/team/ilona-urbaniak.jpg',
           description: 'Doktor nauk w dziedzinie matematyki stosowanej (University of Waterloo, Kanada). Adiunkt w Katedrze Informatyki i Matematyki Politechniki Krakowskiej, specjalizuje się w metodach sztucznej inteligencji i przetwarzaniu obrazów. Łączy doświadczenie akademickie z praktyką inżynierską. Była Head of AI Department w NASK, gdzie prowadziła projekty z zakresu zaawansowanego uczenia maszynowego, a następnie Senior AI Engineer w IllumiSonics (Waterloo, Kanada), tworząc algorytmy analizy obrazów medycznych. Jej badania obejmują inteligentne przetwarzanie danych obrazowych, deep learning oraz metody wspierające diagnostykę medyczną, łącząc matematyczną precyzję z rozwiązaniami dla medycyny przyszłości.',
         },
@@ -327,13 +327,13 @@ export const translations = {
         },
         {
           name: 'Alicja Kowalska',
-          role: 'Prezes Koła',
+          role: 'Lider studentów. Przewodnicząca Studenckiego Koła Naukowego MyAI Sknum',
           photo: '/team/alicja-kowalska.jpg',
           description: 'Jestem studentką III roku Informatyki i na co dzień łączę naukę z praktyką - pracuję jako Software Developer ze specjalizacją w ML&AI. W kole naukowym realizuje różnorodne projekty, a jako administrator koordynuję nasze wspólne działania. Poza kodowaniem? Realizuję własne projekty (bo pomysłów nigdy za mało, jedynie czasu trochę brakuje!), jeżdżę na rolkach, tańczę, eksperymentuję w kuchni i piekę - mówią, że moje ciasta znikają z talerzy w mgnieniu oka.',
         },
         {
           name: 'Wiktoria Kosek',
-          role: 'Wiceprezes',
+          role: 'Wicelider studentów. Wiceprzewodnicząca Studenckiego Koła Naukowego MyAI Sknum',
           photo: '/team/wiktoria-kosek.jpg',
           description: 'Studentka informatyki na 3. roku, pasjonująca się AI, zwłaszcza computer vision. Aktualnie rozwijam kilka własnych projektów, a w wolnych chwilach pracuję jako modelka i podróżuję, odkrywając nowe miejsca.',
         },
