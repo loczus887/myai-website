@@ -28,13 +28,13 @@ export const translations = {
       clubFriends: 'Friends of the Club',
       members: [
         {
-          name: 'Dr Ilona Urbaniak',
+          name: 'Dr. Ilona Urbaniak',
           role: 'Founder and Director, MyAI Research Initiative; Faculty Lead, MyAI Student Research Club',
           photo: '/team/ilona-urbaniak.jpg',
           description: 'PhD in applied mathematics (University of Waterloo, Canada). Assistant professor at the Department of Computer Science and Mathematics at Cracow University of Technology, specializing in artificial intelligence methods and image processing. Combines academic experience with engineering practice. Former Head of AI Department at NASK, leading advanced machine learning projects, and Senior AI Engineer at IllumiSonics (Waterloo, Canada), developing medical image analysis algorithms. Her research covers intelligent image data processing, deep learning, and methods supporting medical diagnostics.',
         },
         {
-          name: 'Dr inż. Dominika Cywicka',
+          name: 'Dr. inż. Dominika Cywicka',
           role: 'Faculty Advisor',
           photo: '/team/dominika-cywicka.jpg',
           description: 'PhD in natural sciences, specialist in data analysis and artificial intelligence in natural resource management. Assistant professor at Cracow University of Technology. In her free time, a passionate climber.',
@@ -46,7 +46,7 @@ export const translations = {
           description: 'Research and teaching assistant at Cracow University of Technology, graduate of two fields of study: mathematics and computer science. In his work, he combines solid theoretical foundations with practical applications of computational methods. Specializes in artificial intelligence and statistics, focusing on data modeling, machine learning and advanced analytical techniques.',
         },
         {
-          name: 'Dr Adam Wyrzykowski',
+          name: 'Dr. Adam Wyrzykowski',
           role: 'Faculty Advisor',
           photo: '/team/adam-wyrzykowski.jpg',
           description: '',

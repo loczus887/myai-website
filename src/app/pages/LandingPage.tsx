@@ -17,20 +17,28 @@ const content = {
     clubLink: 'MyAI Student Research Club',
     people: [
       {
-        name: 'Ilona Urbaniak',
-        role: 'Founder and Director, MyAI Research Initiative; Faculty Lead, MyAI Student Research Club',
+        name: 'Dr. Ilona Urbaniak',
+        role: 'Founder and Director, MyAI Research Initiative\nFaculty Lead, MyAI Student Research Club',
+        bio: 'Academic supervisor and founder of the MyAI Research Initiative at Cracow University of Technology. She leads research activities, oversees interdisciplinary collaboration and mentors students in the fields of artificial intelligence and machine learning.',
+        photo: '/team/ilona-urbaniak.jpg',
       },
       {
         name: 'Alicja Kowalska',
-        role: 'Student Lead. President of the student research club MyAI Sknum',
+        role: 'Student Researcher (Leader)\nPresident of the student research club MyAI Sknum',
+        bio: 'President, founder and administrator of the MyAI Student Research Club. She actively participates in research projects, coordinates both the engineering & research section and the scientific & educational section, and leads AI projects within the club.',
+        photo: '/team/alicja-kowalska.jpg',
       },
       {
         name: 'Wiktoria Kosek',
-        role: 'Vice Student Lead. Vice President of the student research club MyAI Sknum',
+        role: 'Student Researcher (Vice Leader)\nVice President of the student research club MyAI Sknum',
+        bio: 'Vice President and founder of the MyAI Student Research Club. She actively participates in research projects, supports organisational activities and co-leads the engineering & research section.',
+        photo: '/team/wiktoria-kosek.jpg',
       },
       {
         name: 'Antoni Jaros',
         role: 'Student Researcher',
+        bio: 'Member of the engineering & research section. Works on machine learning projects.',
+        photo: '/team/antoni-jaros.jpg',
       },
     ],
   },
@@ -43,59 +51,71 @@ const content = {
     clubLink: 'Studenckie Koło Naukowe MyAI',
     people: [
       {
-        name: 'Ilona Urbaniak',
-        role: 'Założycielka i Dyrektorka MyAI Research Initiative; Opiekun Studenckiego Koła Naukowego Uczenia Maszynowego MyAI',
+        name: 'Dr Ilona Urbaniak',
+        role: 'Założycielka i Dyrektorka MyAI Research Initiative\nOpiekun Studenckiego Koła Naukowego Uczenia Maszynowego MyAI',
+        bio: 'Opiekun naukowy i założycielka MyAI Research Initiative na Politechnice Krakowskiej. Kieruje działalnością badawczą, nadzoruje współpracę międzyuczelnianą i mentoruje studentów w obszarze sztucznej inteligencji i uczenia maszynowego.',
+        photo: '/team/ilona-urbaniak.jpg',
       },
       {
         name: 'Alicja Kowalska',
-        role: 'Lider studentów. Przewodnicząca Studenckiego Koła Naukowego MyAI Sknum',
+        role: 'Student Badacz (Lider)\nPrzewodnicząca Studenckiego Koła Naukowego MyAI Sknum',
+        bio: 'Przewodnicząca, założycielka oraz administrator Studenckiego Koła Naukowego MyAI. Aktywnie uczestniczy w projektach badawczych, koordynuje sekcję inżynieryjno-badawczą oraz naukowo-poznawczą i prowadzi projekty AI w ramach koła.',
+        photo: '/team/alicja-kowalska.jpg',
       },
       {
         name: 'Wiktoria Kosek',
-        role: 'Wicelider studentów. Wiceprzewodnicząca Studenckiego Koła Naukowego MyAI Sknum',
+        role: 'Student Badacz (Wice Lider)\nWiceprzewodnicząca Studenckiego Koła Naukowego MyAI Sknum',
+        bio: 'Wiceprzewodnicząca oraz założycielka Studenckiego Koła Naukowego MyAI. Aktywnie uczestniczy w projektach badawczych, wspiera działalność organizacyjną i współkieruje sekcją inżynieryjno-badawczą.',
+        photo: '/team/wiktoria-kosek.jpg',
       },
       {
         name: 'Antoni Jaros',
         role: 'Student Badacz',
+        bio: 'Członek sekcji inżynieryjno-badawczej. Pracuje nad projektami z zakresu uczenia maszynowego.',
+        photo: '/team/antoni-jaros.jpg',
       },
     ],
   },
 };
 
-const photos = [
-  '/team/ilona-urbaniak.jpg',
-  '/team/alicja-kowalska.jpg',
-  '/team/wiktoria-kosek.jpg',
-  '/team/antoni-jaros.jpg',
-];
-
-function PersonCard({ name, role, photo, delay }: { name: string; role: string; photo: string; delay: number }) {
+function PersonCard({ person, index }: { person: typeof content.en.people[0]; index: number }) {
+  const isEven = index % 2 === 0;
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="flex flex-col items-center gap-3 text-center"
+      transition={{ duration: 0.55, delay: index * 0.1 }}
+      className="flex flex-col md:flex-row items-center md:items-start gap-6 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/8 transition-all"
     >
-      <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-purple-500/40 shadow-lg shadow-purple-500/20 bg-white/5 flex-shrink-0">
+      {/* Avatar */}
+      <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-purple-500/40 shadow-lg shadow-purple-500/20 bg-white/5 flex-shrink-0">
         <img
-          src={photo}
-          alt={name}
+          src={person.photo}
+          alt={person.name}
           className="w-full h-full object-cover"
           onError={(e) => {
             const img = e.currentTarget;
             img.style.display = 'none';
             const parent = img.parentElement;
             if (parent) {
-              parent.innerHTML = `<div class="w-full h-full flex items-center justify-center text-5xl text-white/30">${name.charAt(0)}</div>`;
+              parent.innerHTML = `<div class="w-full h-full flex items-center justify-center text-4xl text-white/30">${person.name.charAt(person.name.indexOf(' ') + 1)}</div>`;
             }
           }}
         />
       </div>
-      <div>
-        <p className="text-white font-semibold text-lg">{name}</p>
-        <p className="text-purple-300 text-sm mt-1 leading-snug max-w-[180px]">{role}</p>
+
+      {/* Info */}
+      <div className="flex flex-col gap-2 text-center md:text-left flex-1">
+        <h3 className="text-white text-xl font-bold">{person.name}</h3>
+        <div>
+          {person.role.split('\n').map((line, i) => (
+            <p key={i} className={i === 0 ? 'text-purple-300 text-sm font-medium' : 'text-white/40 text-xs mt-0.5'}>
+              {line}
+            </p>
+          ))}
+        </div>
+        <p className="text-white/60 text-sm leading-relaxed mt-2">{person.bio}</p>
       </div>
     </motion.div>
   );
@@ -213,24 +233,26 @@ export function LandingPage() {
 
       {/* ── People ── */}
       <section className="relative z-10 px-6 pb-24">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto">
 
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center text-white/50 text-xs tracking-[0.3em] uppercase mb-14"
+            className="text-center text-white/50 text-xs tracking-[0.3em] uppercase mb-10"
           >
             {t.coreTeam}
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+          {/* Vertical list */}
+          <div className="flex flex-col gap-6 mb-14">
             {t.people.map((p, i) => (
-              <PersonCard key={p.name} name={p.name} role={p.role} photo={photos[i]} delay={i * 0.1} />
+              <PersonCard key={p.name} person={p} index={i} />
             ))}
           </div>
 
+          {/* Link to full site */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { HashRouter, Routes, Route } from 'react-router';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -27,11 +27,11 @@ function SKNSite() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/skn/*" element={<SKNSite />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
